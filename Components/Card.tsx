@@ -1,25 +1,32 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-export default function Card() {
+interface Props {
+  name: string;
+  distance: number;
+  imagePath: any;
+  accumulatedLoyaltyPoints: number;
+  maximumLoyaltyPoints: number;
+}
+
+export default function Card(props: Props) {
   return (
     <View style={styles.card}>
       <View style={styles.title}>
-        <Text style={styles.shopName}>Gong Cha</Text>
-        <Text>0.5km away</Text>
+        <Text style={styles.shopName}>{props.name}</Text>
+        <Text>${props.distance}km away</Text>
       </View>
       <View>
-        <Image
-          style={styles.image}
-          source={require("./assets/gong-cha.jpg")}
-        ></Image>
+        <Image style={styles.image} source={props.imagePath}></Image>
         <LinearGradient
           colors={["transparent", "white"]}
           style={styles.whiteGradient}
           start={{ x: 0.1, y: 1 }}
           end={{ x: 0.8, y: 1 }}
         ></LinearGradient>
-        <Text style={styles.loyaltyPoints}>5/10</Text>
+        <Text style={styles.loyaltyPoints}>
+          {props.accumulatedLoyaltyPoints}/{props.maximumLoyaltyPoints}
+        </Text>
       </View>
     </View>
   );
