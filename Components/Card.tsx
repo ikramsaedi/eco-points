@@ -14,7 +14,7 @@ export default function Card(props: Props) {
     <View style={styles.card}>
       <View style={styles.title}>
         <Text style={styles.shopName}>{props.name}</Text>
-        <Text>${props.distance}km away</Text>
+        <Text>{props.distance}km away</Text>
       </View>
       <View>
         <Image style={styles.image} source={props.imagePath}></Image>
@@ -34,7 +34,7 @@ export default function Card(props: Props) {
 
 const styles = StyleSheet.create({
   card: {
-    marginTop: 10,
+    marginBottom: 20,
     borderColor: "#D1D1D1",
     borderWidth: 1,
     borderStyle: "solid",

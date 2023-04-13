@@ -25,6 +25,6 @@ export default function LoyaltiesPage() {
 const styles = StyleSheet.create({
   heading: {
     fontSize: 22,
-    marginBottom: 10,
+    marginBottom: 20,
   },
 });
