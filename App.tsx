@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
+import LoyaltiesPage from "./Pages/LoyaltiesPage";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView style={styles.container}>
+      {/* Loyalties Page should be switched out for a home page */}
+      <LoyaltiesPage />
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    margin: 40,
+    marginVertical: 60,
   },
 });
