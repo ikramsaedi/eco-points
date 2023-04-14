@@ -1,11 +1,40 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
-import LoyaltiesPage from "./Pages/LoyaltiesPage";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StyleSheet, ScrollView, View } from "react-native";
+import ConfirmationPage from "./pages/ConfirmationPage";
+import LoyaltiesPage from "./pages/LoyaltiesPage";
+import QRCodePage from "./pages/QRCodePage";
+import * as Linking from "expo-linking";
+
+const Stack = createNativeStackNavigator();
+
 export default function App() {
+  const url = Linking.useURL();
+  console.log("HEYYY", url);
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="ScrollableLoyalties"
+          component={ScrollableLoyalties}
+        />
+        <Stack.Screen
+          name="QRCodePage"
+          component={QRCodePage}
+          options={{ title: "Scan Me" }}
+        />
+        <Stack.Screen name="ConfirmationPage" component={ConfirmationPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+function ScrollableLoyalties({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       {/* Loyalties Page should be switched out for a home page */}
-      <LoyaltiesPage />
+      <LoyaltiesPage navigation={navigation} />
     </ScrollView>
   );
 }
@@ -13,7 +42,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-    margin: 40,
-    marginVertical: 60,
   },
 });

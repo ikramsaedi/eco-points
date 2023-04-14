@@ -1,30 +1,33 @@
-import { StyleSheet, Text, View } from "react-native";
-import Card from "../Components/Card";
-import dummy_data from "./loyalty_dummy_data";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import Card from "../components/Card";
+import { styles } from "../styles";
+import dummy_data from "../loyaltyDummyData";
 
-export default function LoyaltiesPage() {
+export default function LoyaltiesPage({ navigation }) {
   return (
-    <>
-      <Text style={styles.heading}>Your eco-friendly loyalties</Text>
+    <View style={{ marginHorizontal: 30 }}>
+      <Text style={{ ...styles.heading, marginTop: 30 }}>
+        Your eco-friendly loyalties
+      </Text>
       {dummy_data.map((shop) => {
         return (
-          <Card
+          <Pressable
             key={shop.name}
-            name={shop.name}
-            distance={shop.distance}
-            imagePath={shop.imagePath}
-            accumulatedLoyaltyPoints={shop.accumulatedLoyaltyPoints}
-            maximumLoyaltyPoints={shop.maximumLoyaltyPoints}
-          />
+            onPress={() =>
+              navigation.navigate("QRCodePage", { name: shop.name })
+            }
+          >
+            <Card
+              key={shop.name}
+              name={shop.name}
+              distance={shop.distance}
+              imagePath={shop.imagePath}
+              accumulatedLoyaltyPoints={shop.accumulatedLoyaltyPoints}
+              maximumLoyaltyPoints={shop.maximumLoyaltyPoints}
+            />
+          </Pressable>
         );
       })}
-    </>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  heading: {
-    fontSize: 22,
-    marginBottom: 20,
-  },
-});

@@ -1,25 +1,25 @@
-const dummy_data = [
+const loyaltyDummyData = [
   {
     name: "Gong Cha",
     distance: 0.5,
-    imagePath: require("../assets/gong-cha.jpg"),
+    imagePath: require("./assets/gong-cha.jpg"),
     accumulatedLoyaltyPoints: 5,
     maximumLoyaltyPoints: 10,
   },
   {
     name: "Starbucks",
     distance: 0.1,
-    imagePath: require("../assets/starbucks.jpg"),
+    imagePath: require("./assets/starbucks.jpg"),
     accumulatedLoyaltyPoints: 2,
     maximumLoyaltyPoints: 10,
   },
   {
     name: "Gloria Jeans",
     distance: 0.1,
-    imagePath: require("../assets/gloria-jeans.jpg"),
+    imagePath: require("./assets/gloria-jeans.jpg"),
     accumulatedLoyaltyPoints: 3,
     maximumLoyaltyPoints: 5,
   },
 ];
 
-export default dummy_data;
+export default loyaltyDummyData;
