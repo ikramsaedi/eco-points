@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import Card from "../components/Card";
+import Card from "../Components/Card";
 import { styles } from "../styles";
 import dummy_data from "../loyaltyDummyData";
 

@@ -1,9 +1,9 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet, ScrollView, View } from "react-native";
-import ConfirmationPage from "./pages/ConfirmationPage";
-import LoyaltiesPage from "./pages/LoyaltiesPage";
-import QRCodePage from "./pages/QRCodePage";
+import ConfirmationPage from "./Pages/ConfirmationPage";
+import LoyaltiesPage from "./Pages/LoyaltiesPage";
+import QRCodePage from "./Pages/QRCodePage";
 import * as Linking from "expo-linking";
 
 const Stack = createNativeStackNavigator();
