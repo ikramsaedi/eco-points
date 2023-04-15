@@ -15,10 +15,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="ScrollableLoyalties"
-          component={ScrollableLoyalties}
-        />
+        <Stack.Screen name="Eco Points" component={ScrollableLoyalties} />
         <Stack.Screen
           name="QRCodePage"
           component={QRCodePage}

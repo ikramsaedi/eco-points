@@ -71,6 +71,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 10,
     fontSize: 20,
-    bottom: "50%",
+    bottom: "60%",
   },
 });

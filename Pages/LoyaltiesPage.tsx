@@ -6,9 +6,7 @@ import dummy_data from "../loyaltyDummyData";
 export default function LoyaltiesPage({ navigation }) {
   return (
     <View style={{ marginHorizontal: 30 }}>
-      <Text style={{ ...styles.heading, marginTop: 30 }}>
-        Your eco-friendly loyalties
-      </Text>
+      <Text style={{ marginTop: 30 }}></Text>
       {dummy_data.map((shop) => {
         return (
           <Pressable
